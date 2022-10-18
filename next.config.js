@@ -5,7 +5,8 @@ const nextConfig = {
   images: {
     domains: [
       'badgen.net'
-    ]
+    ],
+    unoptimized: true,
   },
   async headers() {
     return [
