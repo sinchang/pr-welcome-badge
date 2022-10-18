@@ -1,14 +1,14 @@
 # PR Welcome Badge
 
-Dispay the contribution friendly issue's (which label includes `help wanted` or `good first issue`) count.
+Display the contribution friendly issue's (which label includes `help wanted` or `good first issue`) count.
 
 ## Usage
 
-badge url format is `https://badgen.net/https/pr-welcome-badge.vercel.app/api/badge/${repo}`
+The badge URL format is `https://badgen.net/https/pr-welcome-badge.vercel.app/api/badge/${repo}`
 
 E.g. https://badgen.net/https/pr-welcome-badge.vercel.app/api/badge/fastify/help
 
-### How to generate markdown badge
+### How to generate a markdown badge
 
 First of all, go to the API https://pr-welcome-badge.vercel.app/api/badge/${repo} to see the `issuesUrl`,
 
