@@ -5,13 +5,7 @@ const octokit = new Octokit({
   auth: process.env.GH_AUTH_TOKEN,
 })
 
-const DEFAULT_LABELS = [
-  'help wanted',
-  'good first issue',
-  'pr welcome',
-  'contribution welcome',
-  'accepting prs',
-]
+const DEFAULT_LABELS = ['help wanted', 'good first issue']
 
 export default async function handler(
   req: NextApiRequest,
@@ -40,13 +34,16 @@ export default async function handler(
   )
 
   const labelQueryString =
-    '+label:' + DEFAULT_LABELS.map((label) => `"${label}",`)
-  const issuesLink = `https://github.com/${repo}/issues?q=archived:false+is:issue+is:open+sort:updated-desc${labelQueryString}`
+    '+label:' + DEFAULT_LABELS.map((label) => `"${label}"`)
+  const issuesUrl = `https://github.com/${repo.join(
+    '/'
+  )}/issues?q=archived:false+is:issue+is:open+sort:updated-desc${labelQueryString}`
   const uniqItemSearchResults = uniqBy(itemSearchResults.flat(), 'url')
 
   res.status(200).json({
     subject: 'PR Welcome',
     status: uniqItemSearchResults.length,
     color: 'green',
+    issuesUrl,
   })
 }
