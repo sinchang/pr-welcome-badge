@@ -19,23 +19,19 @@ export default async function handler(
 ) {
   if (req.method !== 'GET') return res.status(401)
 
-  const query = req.query as { labels: string[]; repo: string[] }
-
-  const labels = Array.isArray(query.labels)
-    ? query.labels
-    : query.labels
-    ? [query.labels]
-    : DEFAULT_LABELS
-
+  const query = req.query as { repo: string[] }
+  console.log(req.query)
   const repo = query.repo
 
   if (!repo)
     return res.status(400).json({ message: 'Please provide the GitHub Repo' })
 
   const itemSearchResults = await Promise.all(
-    labels.map(async (label) => {
+    DEFAULT_LABELS.map(async (label) => {
       const issues = await octokit.search.issuesAndPullRequests({
-        q: `archived:false is:issue is:open sort:updated-desc label:"${label}" repo:"${repo}"`,
+        q: `archived:false is:issue is:open sort:updated-desc label:"${label}" repo:"${repo.join(
+          '/'
+        )}"`,
         per_page: 100,
       })
 
@@ -43,7 +39,8 @@ export default async function handler(
     })
   )
 
-  const labelQueryString = '+label:' + labels.map((label) => `"${label}",`)
+  const labelQueryString =
+    '+label:' + DEFAULT_LABELS.map((label) => `"${label}",`)
   const issuesLink = `https://github.com/${repo}/issues?q=archived:false+is:issue+is:open+sort:updated-desc${labelQueryString}`
   const uniqItemSearchResults = uniqBy(itemSearchResults.flat(), 'url')
 
