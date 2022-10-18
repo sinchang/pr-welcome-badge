@@ -10,6 +10,12 @@ E.g. https://badgen.net/https/pr-welcome-badge.vercel.app/api/badge/fastify/help
 
 ### How to generate a markdown badge
 
+#### Online
+
+Check out https://pr-welcome-badge.vercel.app
+
+#### Manual
+
 First of all, go to the API https://pr-welcome-badge.vercel.app/api/badge/${repo} to see the `issuesUrl`,
 
 Then use the below snippet to link the badge to the `issuesUrl`.

@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@geist-ui/style': ^2.0.0
   '@octokit/rest': ^19.0.5
   '@types/lodash.uniqby': ^4.7.7
   '@types/node': 18.11.0
@@ -15,6 +16,7 @@ specifiers:
   typescript: 4.8.4
 
 dependencies:
+  '@geist-ui/style': 2.0.0
   '@octokit/rest': 19.0.5
   lodash.uniqby: 4.7.0
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
@@ -63,6 +65,16 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@geist-ui/style/2.0.0:
+    resolution: {integrity: sha512-42FIVfbulNYz2SuA4zC3gPbyP5bhSwPvvFUPXgmDrAacFDDZo0lx3ZuXMUK7Z2UfIQNQc3RipX9bLXrmxmosKw==}
+    dependencies:
+      '@geist-ui/themes': 1.1.0
+    dev: false
+
+  /@geist-ui/themes/1.1.0:
+    resolution: {integrity: sha512-N13wlIOeEU8QkOu4mxg5AcF7DpfLNBcZhW/YDMRVEch0ehPl8Y+g4/JW1A4uT6E5W3USSybslmhjFZ7HH8T2LA==}
+    dev: false
 
   /@humanwhocodes/config-array/0.10.7:
     resolution: {integrity: sha512-MDl6D6sBsaV452/QSdX+4CXIjZhIcI0PELsxUjk4U828yd58vk3bTIvk/6w5FY+4hIy9sLW0sfrV7K7Kc++j/w==}
