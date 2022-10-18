@@ -48,10 +48,8 @@ export default async function handler(
   const uniqItemSearchResults = uniqBy(itemSearchResults.flat(), 'url')
 
   res.status(200).json({
-    schemaVersion: 1,
-    label: 'PR Welcome',
-    message: uniqItemSearchResults.length,
-    color: 'success',
-    issues: issuesLink,
+    subject: 'PR Welcome',
+    status: uniqItemSearchResults.length,
+    color: 'green',
   })
 }
