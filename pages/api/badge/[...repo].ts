@@ -14,7 +14,6 @@ export default async function handler(
   if (req.method !== 'GET') return res.status(401)
 
   const query = req.query as { repo: string[] }
-  console.log(req.query)
   const repo = query.repo
 
   if (!repo)
@@ -40,6 +39,7 @@ export default async function handler(
   )}/issues?q=archived:false+is:issue+is:open+sort:updated-desc${labelQueryString}`
   const uniqItemSearchResults = uniqBy(itemSearchResults.flat(), 'url')
 
+  res.setHeader('Cache-Control', 's-maxage=3600')
   res.status(200).json({
     subject: 'PR Welcome',
     status: uniqItemSearchResults.length,
