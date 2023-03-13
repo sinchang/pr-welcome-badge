@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   const fetchRepoInfo = async (
     repoName: string
   ): Promise<{ issuesUrl: string }> => {
-    return fetch(`https://pr-welcome-badge.vercel.app/api/badge/${repoName}`)
+    return fetch(`/api/badge/${repoName}`)
       .then((res) => res.json())
       .then((res) => res)
   }
