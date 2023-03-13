@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
 import Image from 'next/image'
+import CodeCopy from 'react-codecopy'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -26,6 +27,10 @@ const Home: NextPage = () => {
 
     setIssuesUrl(issuesUrl)
   }
+
+  const md = `[![PR Welcome Badge](https://badgen.net/https/pr-welcome-badge.vercel.app/api/badge/${repo})](${encodeURIComponent(
+    issuesUrl
+  )})`
 
   return (
     <div className={styles.container}>
@@ -65,11 +70,11 @@ const Home: NextPage = () => {
           )}
         </div>
         {!!issuesUrl && (
-          <div className={styles.code}>
-            {`[![PR Welcome Badge](https://badgen.net/https/pr-welcome-badge.vercel.app/api/badge/${repo})](${encodeURIComponent(
-              issuesUrl
-            )})`}
-          </div>
+          <CodeCopy text={md}>
+            <div className={styles.code}>
+              {md}
+            </div>
+          </CodeCopy>
         )}
       </main>
 
