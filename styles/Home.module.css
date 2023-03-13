@@ -1,9 +1,10 @@
 .container {
-  padding: 0 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main {
-  min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
   display: flex;
@@ -14,8 +15,8 @@
 
 .footer {
   display: flex;
-  flex: 1;
   padding: 2rem 0;
+  margin-top: auto;
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
