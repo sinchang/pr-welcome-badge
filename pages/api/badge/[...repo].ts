@@ -33,12 +33,13 @@ export default async function handler(
   )
 
   const labelQueryString =
-    '+label:' + DEFAULT_LABELS.map((label) => `"${label}"`)
-
-    const q = `archived:false+is:issue+is:open+sort:updated-desc${labelQueryString}`
+    'label:' + DEFAULT_LABELS.map((label) => `"${label}"`)
+    
+  const q = `archived:false+is:issue+is:open+sort:updated-desc+${encodeURIComponent(labelQueryString)}`
+  
   const issuesUrl = `https://github.com/${repo.join(
     '/'
-  )}/issues?$q=${encodeURIComponent(q)}`
+  )}/issues?q=${q}`
   const uniqItemSearchResults = uniqBy(itemSearchResults.flat(), 'url')
 
   res.setHeader('Cache-Control', 's-maxage=3600')
