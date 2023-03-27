@@ -28,9 +28,7 @@ const Home: NextPage = () => {
     setIssuesUrl(issuesUrl)
   }
 
-  const md = `[![PR Welcome Badge](https://badgen.net/https/pr-welcome-badge.vercel.app/api/badge/${repo})](${encodeURIComponent(
-    issuesUrl
-  )})`
+  const md = `[![PR Welcome Badge](https://badgen.net/https/pr-welcome-badge.vercel.app/api/badge/${repo})](${issuesUrl})`
 
   return (
     <div className={styles.container}>
