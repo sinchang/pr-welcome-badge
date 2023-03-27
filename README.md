@@ -1,6 +1,6 @@
 # PR Welcome Badge
 
-[![PR Welcome Badge](https://badgen.net/https/pr-welcome-badge.vercel.app/api/badge/sinchang/pr-welcome-badge)](https%3A%2F%2Fgithub.com%2Fsinchang%2Fpr-welcome-badge%2Fissues%3Fq%3Darchived%3Afalse%2Bis%3Aissue%2Bis%3Aopen%2Bsort%3Aupdated-desc%2Blabel%3A%22help%20wanted%22%2C%22good%20first%20issue%22)
+[![PR Welcome Badge](https://badgen.net/https/pr-welcome-badge.vercel.app/api/badge/sinchang/pr-welcome-badge)](https://github.com/sinchang/pr-welcome-badge/issues?$q=archived%3Afalse%2Bis%3Aissue%2Bis%3Aopen%2Bsort%3Aupdated-desc%2Blabel%3A%22help%20wanted%22%2C%22good%20first%20issue%22)
 
 Display the count of issues that are contribution-friendly, i.e., those that have labels such as "help wanted" or "good first issue".
 
